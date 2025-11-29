@@ -6,9 +6,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.prontoeja.backend.models.Customer;
+import com.prontoeja.backend.models.RefreshToken;
 
 @Repository
-public interface CustomerRepository extends JpaRepository<Customer, String> {
-    Optional<Customer> findByEmail(String email);
-    boolean existsByEmail(String email);
+public interface RefreshTokenRepository extends JpaRepository<RefreshToken, String> {
+    Optional<RefreshToken> findByToken(String token);
+    void deleteByCustomer(Customer customer);
 }

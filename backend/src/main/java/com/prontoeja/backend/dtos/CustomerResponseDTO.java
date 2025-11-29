@@ -1,0 +1,13 @@
+package com.prontoeja.backend.dtos;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class CustomerResponseDTO {
+    private String id;
+    private String name;
+    private String email;
+    private String phoneNumber;
+}
