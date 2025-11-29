@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.prontoeja.backend.config.JwtProperties;
 import com.prontoeja.backend.models.Customer;
 import com.prontoeja.backend.models.RefreshToken;
 import com.prontoeja.backend.repositories.RefreshTokenRepository;
