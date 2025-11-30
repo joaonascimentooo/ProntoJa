@@ -1,4 +1,6 @@
-package com.prontoeja.backend.dtos;
+package com.prontoeja.backend.dtos.auth;
+
+import com.prontoeja.backend.dtos.customer.CustomerResponseDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

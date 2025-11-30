@@ -1,4 +1,4 @@
-package com.prontoeja.backend.dtos;
+package com.prontoeja.backend.dtos.auth;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

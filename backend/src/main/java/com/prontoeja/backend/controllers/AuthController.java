@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.prontoeja.backend.dtos.AuthResponseDTO;
-import com.prontoeja.backend.dtos.LoginRequestDTO;
-import com.prontoeja.backend.dtos.RefreshTokenRequestDTO;
-import com.prontoeja.backend.dtos.RegisterRequestDTO;
+import com.prontoeja.backend.dtos.auth.AuthResponseDTO;
+import com.prontoeja.backend.dtos.auth.LoginRequestDTO;
+import com.prontoeja.backend.dtos.auth.RefreshTokenRequestDTO;
+import com.prontoeja.backend.dtos.auth.RegisterRequestDTO;
 import com.prontoeja.backend.services.AuthService;
 
 import lombok.RequiredArgsConstructor;

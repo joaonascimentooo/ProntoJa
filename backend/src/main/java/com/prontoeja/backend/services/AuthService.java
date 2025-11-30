@@ -7,10 +7,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.prontoeja.backend.dtos.AuthResponseDTO;
-import com.prontoeja.backend.dtos.CustomerResponseDTO;
-import com.prontoeja.backend.dtos.LoginRequestDTO;
-import com.prontoeja.backend.dtos.RegisterRequestDTO;
+import com.prontoeja.backend.dtos.auth.AuthResponseDTO;
+import com.prontoeja.backend.dtos.auth.LoginRequestDTO;
+import com.prontoeja.backend.dtos.auth.RegisterRequestDTO;
+import com.prontoeja.backend.dtos.customer.CustomerResponseDTO;
 import com.prontoeja.backend.models.Customer;
 import com.prontoeja.backend.models.RefreshToken;
 import com.prontoeja.backend.repositories.CustomerRepository;
