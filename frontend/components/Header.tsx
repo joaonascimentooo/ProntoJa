@@ -3,7 +3,6 @@
 import { Search, ShoppingCart, User, Menu } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useRouter } from "next/navigation";
-import { ThemeToggle } from "./ThemeToggle";
 import { useState, useEffect } from "react";
 
 export default function Header() {
@@ -29,9 +28,6 @@ export default function Header() {
       <div className="bg-slate-900 dark:bg-slate-950 text-white py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between text-sm">
           <span>Frete grátis para todo Brasil em compras acima de R$ 199</span>
-          <div className="flex items-center gap-4">
-            <ThemeToggle />
-          </div>
         </div>
       </div>
 
