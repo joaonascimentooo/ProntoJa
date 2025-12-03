@@ -4,10 +4,14 @@ import java.util.Date;
 
 import javax.crypto.SecretKey;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import com.prontoeja.backend.config.JwtProperties;
+import com.prontoeja.backend.models.Customer;
+import com.prontoeja.backend.repositories.CustomerRepository;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -20,6 +24,7 @@ import lombok.RequiredArgsConstructor;
 public class JwtService {
 
     private final JwtProperties jwtProperties;
+    private final CustomerRepository customerRepository;
 
     public String generateToken(UserDetails userDetails) {
         return Jwts.builder()
@@ -54,5 +59,16 @@ public class JwtService {
     private SecretKey getSigningKey() {
         byte[] keyBytes = Decoders.BASE64.decode(jwtProperties.getSecret());
         return Keys.hmacShaKeyFor(keyBytes);
+    }
+
+    public Customer getAuthenticatedCustomer() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || !authentication.isAuthenticated()) {
+            throw new RuntimeException("User not authenticated");
+        }
+        
+        CustomerUserDetails userDetails = (CustomerUserDetails) authentication.getPrincipal();
+        return customerRepository.findByEmail(userDetails.getUsername())
+                .orElseThrow(() -> new RuntimeException("Customer not found"));
     }
 }
